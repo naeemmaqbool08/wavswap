@@ -1,0 +1,47 @@
+{
+  "name": "wavswap",
+  "version": "1.0.0",
+  "description": "wavswap downloader windows and mac",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "author": "Itsan Soft",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^25.2.0",
+    "electron-builder": "^24.4.0"
+  },
+  "build": {
+    "productName": "WavsWap",
+    "appId": "com.wavswap.app",
+    "asar": true,
+    "directories": {
+      "output": "dist"
+    },
+    "mac": {
+      "category": "com.wavswap.desktop.app",
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "logo.png",
+      "signingHashAlgorithms": [
+        "sha256"
+      ],
+      "verifyUpdateCodeSignature": false
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "AppImage"
+      ],
+      "category": "com.wavswap.desktop.app"
+    }
+  }
+}

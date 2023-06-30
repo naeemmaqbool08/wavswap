@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>WavsWap</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .settings-button {
+      display: flex;
+      justify-content: flex-start;
+      padding: 10px;
+    }
+    .settings-button button{
+      background: #552BFC;
+      border: 0;
+      padding: 10px;
+      border-radius: 4px;
+      color: #fff;
+      font-weight: 500;
+    }
+    input{
+        width: 66%;
+        margin-right: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="settings-button">
+    <input type="text" id="path" style="width: 66%; margin-right: 10px;"/>
+    <button onclick="SaveFilePath()">Select Download Path</button>
+  </div>
+
+
+  <script>
+    const { ipcRenderer } = require('electron');
+
+    function SaveFilePath() {
+        ipcRenderer.send('savePath');
+    }
+
+    ipcRenderer.on('path-from-main', (event, data) => {
+        document.getElementById('path').value = data;
+    });
+  </script>
+</body>
+</html>

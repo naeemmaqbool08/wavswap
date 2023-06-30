@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>WavsWap</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .webview-container {
+      flex: 1;
+      overflow: hidden;
+      height: 100%;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="webview-container">
+    <webview allowpopups id="foo" src="https://www.wavswap.com/" style="display:inline-flex; width:100%; height:100%"></webview>
+  </div>
+  
+  <script>
+    const { ipcRenderer,remote } = require('electron');
+
+    const webview = document.querySelector('webview');
+    webview.addEventListener('dom-ready', () => {
+      
+    });
+
+    ipcRenderer.on('zoom-changed', (event, zoomLevel) => {
+      webview.setZoomLevel(zoomLevel);
+    });
+  </script>
+</body>
+</html>
