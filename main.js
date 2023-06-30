@@ -109,6 +109,13 @@ function createWindow () {
       showMessageDialog('Error','Path can\'t be empty','info');
     }
   });
+
+  // win.webContents.session.clearCache(() => {
+  //   console.log('Cache cleared.');
+  // });
+  // win.webContents.session.clearStorageData({ storages: ['cookies'] }, () => {
+  //   console.log('Storage data cleared.');
+  // });
 }
 
 app.whenReady().then(() => {
