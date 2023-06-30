@@ -16,7 +16,7 @@
   "build": {
     "productName": "WavsWap",
     "appId": "com.wavswap.app",
-    "asar": true,
+    "asar": false,
     "directories": {
       "output": "dist"
     },

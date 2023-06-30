@@ -71,6 +71,7 @@ function createWindow () {
   const menu = Menu.buildFromTemplate(settingsMenuTemplate);
   Menu.setApplicationMenu(menu);
   win.loadFile('index.html');
+  // win.webContents.openDevTools();
   // win.maximize();
   
   win.webContents.session.on('will-download', (event, item) => {
