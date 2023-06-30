@@ -56,8 +56,9 @@ const settingsMenuTemplate = [
 
 function createWindow () {
   win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    height:800,
+    width:1200,
+    maximizable:true,
     autoHideMenuBar: false,
     webPreferences: {
       webviewTag: true,
@@ -65,12 +66,12 @@ function createWindow () {
       contextIsolation: false,
       enableRemoteModule: true,
     }
-  })
+  });
 
   const menu = Menu.buildFromTemplate(settingsMenuTemplate);
   Menu.setApplicationMenu(menu);
   win.loadFile('index.html');
-  win.maximize();
+  // win.maximize();
   
   win.webContents.session.on('will-download', (event, item) => {
     loadFilePath();
