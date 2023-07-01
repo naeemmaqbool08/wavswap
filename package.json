@@ -21,6 +21,8 @@
       "output": "dist"
     },
     "mac": {
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
       "category": "com.wavswap.desktop.app",
       "target": [
         "dmg",
