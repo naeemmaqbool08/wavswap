@@ -31,7 +31,7 @@
     },
     "win": {
       "target": "nsis",
-      "icon": "win_logo.png",
+      "icon": "win_logo_.ico",
       "signingHashAlgorithms": [
         "sha256"
       ],
