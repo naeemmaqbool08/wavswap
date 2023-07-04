@@ -24,7 +24,7 @@
       "hardenedRuntime": true,
       "gatekeeperAssess": false,
       "category": "com.wavswap.desktop.app",
-      "icon": "win_logo.png",
+      "icon": "logo.ico",
       "target": [
         "dmg",
         "zip"
@@ -32,7 +32,7 @@
     },
     "win": {
       "target": "nsis",
-      "icon": "win_logo_.ico",
+      "icon": "logo.ico",
       "signingHashAlgorithms": [
         "sha256"
       ],
