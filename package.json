@@ -24,6 +24,7 @@
       "hardenedRuntime": true,
       "gatekeeperAssess": false,
       "category": "com.wavswap.desktop.app",
+      "icon": "win_logo.png",
       "target": [
         "dmg",
         "zip"

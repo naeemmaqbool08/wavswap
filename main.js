@@ -16,8 +16,8 @@ const settingsMenuTemplate = [
         label: 'Settings',
         click: () => {
           settingsWindow = new BrowserWindow({
-            parent: win,
-            modal: true,
+            // parent: win,
+            // modal: true,
             width: 530,
             height: 110,
             resizable: false,
@@ -139,8 +139,15 @@ ipcMain.on('savePath', (event, folderpath) => {
   dialog.showOpenDialog({ properties: ['openDirectory'] })
   .then(result => {
     var folderpath = result.filePaths[0];
-    if(!folderpath.endsWith('\\')){
-      folderpath = folderpath+'\\';
+    if(process.platform === 'darwin'){
+      if(!folderpath.endsWith('/')){
+        folderpath = folderpath+'/';
+      }
+    }
+    else{
+      if(!folderpath.endsWith('\\')){
+        folderpath = folderpath+'\\';
+      }
     }
     var config = {
       "file_path": folderpath
